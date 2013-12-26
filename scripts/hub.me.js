@@ -58,7 +58,7 @@
             repos = [],
             thisRepo = self.options.username + '.github.com';
 
-        $.getJSON('https://api.github.com/users/' + this.options.username + '/repos?callback=?', function (result) {
+        $.getJSON('https://api.github.com/users/' + this.options.username + '/repos?per_page=100&callback=?', function (result) {
 
             $.each(result.data, function(i, field) {
             	if (field.language != null && field.name != thisRepo)
